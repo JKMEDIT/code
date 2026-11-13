@@ -1,0 +1,6 @@
+{
+  "name": "FolioDraft",
+  "description": "Free-style rich-text notepad and responsive HTML, CSS, and JavaScript website code generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

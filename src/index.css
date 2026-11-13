@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-code: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-ui);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-code);
+  }
+}
+
+/* Custom subtle scrollbars for studio panels */
+.studio-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.studio-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.studio-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 3px;
+}
+.studio-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
+
+/* Editor interactive canvas styles */
+.fd-editor-surface:focus {
+  outline: none;
+}
+
+.fd-editor-surface[data-empty="true"]::before {
+  content: attr(data-placeholder);
+  color: #94a3b8;
+  pointer-events: none;
+  display: block;
+}
+
+.fd-editor-surface img {
+  cursor: pointer;
+  transition: outline 150ms ease;
+}
+
+.fd-editor-surface img.fd-img-selected {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
